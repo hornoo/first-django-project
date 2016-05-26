@@ -1,18 +1,38 @@
+{% load staticfiles %}
 <html>
 <head>
 	<title>My Super Blog</title>
+	
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	<link href="http://fonts.googleapis.com/css?family=Tangerine&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+	
 </head>
 	<body>
-	<h1> My Amazing Blog </h1>
 	
-		{% for post in posts %}
-		<div>
-			<h1><a href="">{{ post.title }}</a></h1>
-			<p>Published: {{ post.published_date }}</p>
-			<p>{{ post.text|linebreaks }}</p>
-			<br />
+	<div class="pade-header">
+	<h1> My Amazing Blog </h1>
+	</div>
+	
+	<div class="content container">
+		<div class="row">
+			<div class="col-md-8">
+				{% for post in posts %}
+					<div class="post">
+						<div class="date">
+							<p>Published: {{ post.published_date }}</p>
+						</div>
+						<h1><a href="">{{ post.title }}</a></h1>
+						<p>{{ post.text|linebreaks }}</p>
+					</div>
+					
+				{% endfor %}
+			</div>	
 		</div>
-		{% endfor %}
+		
+	</div>
+	
 	</body>
 
 
