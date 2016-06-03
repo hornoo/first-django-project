@@ -54,3 +54,9 @@ h1, h2, h3, h4 {
     color: #55aa99;
     font-size: 36pt;
 }
+
+.comment {
+    margin: 20px 0px 50px 20px;
+    font-size: 0.75em;
+    color: brown;
+}
